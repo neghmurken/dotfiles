@@ -139,28 +139,6 @@ ex ()
 # better yaourt colors
 export YAOURT_COLORS="nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1;41;5:votes=1;44:dsc=0:other=1;35"
 
-cd() {
-  builtin cd "$@"
-
-  if [[ "$?" -gt 0 ]]; then
-    return "$?"
-  fi
-
-  if [[ -f .aliases && -z "$(cat .aliases | grep -v '^alias ')" ]]; then
-    base_aliases="$(alias)"
-    . .aliases
-  fi
-
-  if [[ ! -f .aliases && ! -z "$base_aliases" ]]; then
-    unalias -a
-    eval "$base_aliases"
-  fi
-
-  return 0
-}
-
-base_aliases=''
-
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/pib/projects/google-cloud-sdk/path.bash.inc' ]; then . '/home/pib/projects/google-cloud-sdk/path.bash.inc'; fi
 
