@@ -22,7 +22,7 @@ install () {
 
   ec=$?
   if [ $ec != 0 ]; then
-    yay --noconfirm --norebuild -S $1
+    yay --noconfirm --norebuild --noredownload -S $1
   fi
 }
 
@@ -35,6 +35,7 @@ install bat
 install hub
 install tmux
 
+install nodejs
 install docker
 install docker-compose
 
