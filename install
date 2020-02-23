@@ -10,7 +10,7 @@ link_file () {
       mv $HOME/$1 $HOME/$1.bckp
       echo "$HOME/$1 already exists. Will back-up"
     fi
-    
+
     ln -s -f $DFDIR/$1 $HOME/$1
   else
     echo "$DFDIR/$1 does not exist"
@@ -19,18 +19,28 @@ link_file () {
 
 install () {
   sudo pacman --noconfirm --needed -S $1
+
+  ec=$?
+  if [ $ec != 0 ]; then
+    yay --noconfirm --norebuild -S $1
+  fi
 }
 
 # ---- Install dependencies
 
 install yay
+
 install wget
 install bat
 install hub
 install tmux
+
 install docker
 install docker-compose
+
 install firefox
+install google-chrome
+install slack-desktop
 
 if [ ! -f $HOME/git-prompt.sh ]; then
   echo "Installing git-prompt.sh"
@@ -55,4 +65,3 @@ link_file .gitignore
 # ---- Init
 
 source $HOME/.bashrc
-
