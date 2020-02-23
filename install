@@ -1,0 +1,58 @@
+#!/bin/bash
+
+DFDIR=`dirname $0 | xargs realpath`
+
+# ---- Functions
+
+link_file () {
+  if [ -f $DFDIR/$1 ]; then
+    if [ -f $HOME/$1 ] && [ ! -h $HOME/$1 ]; then
+      mv $HOME/$1 $HOME/$1.bckp
+      echo "$HOME/$1 already exists. Will back-up"
+    fi
+    
+    ln -s -f $DFDIR/$1 $HOME/$1
+  else
+    echo "$DFDIR/$1 does not exist"
+  fi
+}
+
+install () {
+  sudo pacman --noconfirm --needed -S $1
+}
+
+# ---- Install dependencies
+
+install yay
+install wget
+install bat
+install hub
+install tmux
+install docker
+install docker-compose
+install firefox
+
+if [ ! -f $HOME/git-prompt.sh ]; then
+  echo "Installing git-prompt.sh"
+  wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
+fi
+
+if [ ! -f $HOME/git-completion.bash ]; then
+  echo "Install git-completion.bash"
+  wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+fi
+
+# ---- Back-up and link files
+
+link_file .tmux.conf
+link_file .bashrc
+link_file .bash_prompt
+link_file .bash_aliases
+link_file .bash_functions
+link_file .gitconfig
+link_file .gitignore
+
+# ---- Init
+
+source $HOME/.bashrc
+

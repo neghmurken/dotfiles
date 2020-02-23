@@ -1,0 +1,12 @@
+# IntelliJ
+.idea/
+
+# vi
+*~
+
+# Tests
+test.php
+./*.sql
+
+# General
+.aliases

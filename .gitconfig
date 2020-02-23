@@ -1,0 +1,13 @@
+[user]
+	email = foxhoundeuh@gmail.com
+	name = Neghmurken
+[alias]
+	co = checkout
+	ci = commit
+    cia = commit --amend
+	st = status
+    pufl = push --force-with-lease
+[credential]
+	helper = store
+[core]
+	excludesfile = /home/pib/.gitignore
