@@ -37,6 +37,7 @@ install bat
 install hub
 install tmux
 install ngrok
+install broot
 
 install nodejs
 install docker

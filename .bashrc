@@ -152,3 +152,5 @@ if [ -f '/home/pib/projects/google-cloud-sdk/completion.bash.inc' ]; then . '/ho
 [[ -f ~/.bash_prompt ]] && . ~/.bash_prompt
 
 [[ $TERM != "screen" ]] && exec tmux -2
+
+source /home/pib/.config/broot/launcher/bash/br
