@@ -47,6 +47,8 @@ install firefox
 install google-chrome
 install slack-desktop
 
+install spotify
+
 if [ ! -f $HOME/git-prompt.sh ]; then
   echo "Installing git-prompt.sh"
   wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
