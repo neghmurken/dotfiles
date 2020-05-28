@@ -69,6 +69,10 @@ link_file .bash_functions
 link_file .gitconfig
 link_file .gitignore
 
+# ---- Set up Term preferences
+
+./gnome/load-term-profile
+
 # ---- Init
 
 source $HOME/.bashrc

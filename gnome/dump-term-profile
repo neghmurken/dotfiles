@@ -1,0 +1,5 @@
+#!/bin/bash
+
+GNOMEDIR=`dirname $0 | xargs realpath`
+
+dconf dump /org/gnome/terminal/legacy/profiles:/ > $GNOMEDIR/gnome-terminal-profiles.dconf

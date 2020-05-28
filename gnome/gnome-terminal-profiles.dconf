@@ -1,0 +1,15 @@
+[:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+background-color='rgb(24,34,38)'
+bold-is-bright=false
+cell-width-scale=1.0
+cursor-blink-mode='on'
+cursor-shape='ibeam'
+default-size-columns=160
+default-size-rows=48
+font='Source Code Pro 10'
+foreground-color='rgb(179,195,214)'
+palette=['rgb(23,26,27)', 'rgb(180,46,67)', 'rgb(90,222,159)', 'rgb(201,185,118)', 'rgb(108,114,208)', 'rgb(191,128,201)', 'rgb(106,169,211)', 'rgb(211,215,207)', 'rgb(60,63,68)', 'rgb(185,74,104)', 'rgb(75,178,122)', 'rgb(172,161,70)', 'rgb(73,84,151)', 'rgb(168,87,159)', 'rgb(66,141,164)', 'rgb(238,238,236)']
+scroll-on-output=true
+use-system-font=false
+use-theme-colors=false
+visible-name='Pib'
