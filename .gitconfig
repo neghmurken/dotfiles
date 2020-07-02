@@ -11,3 +11,5 @@
 	helper = store
 [core]
 	excludesfile = /home/pib/.gitignore
+[pull]
+	rebase = false

@@ -38,7 +38,10 @@ install hub
 install tmux
 install ngrok
 install broot
+install xclip
+install noto-fonts-emoji
 
+install php
 install nodejs
 install docker
 install docker-compose
@@ -46,6 +49,8 @@ install docker-compose
 install firefox
 install google-chrome
 install slack-desktop
+install discord
+install phpstorm
 
 install spotify
 
