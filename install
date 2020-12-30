@@ -37,9 +37,10 @@ install bat
 install hub
 install tmux
 install ngrok
-install broot
+install jq
 install xclip
 install noto-fonts-emoji
+install inotify-tools
 
 install php
 install nodejs
