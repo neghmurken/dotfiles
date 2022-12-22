@@ -17,3 +17,5 @@ alias gds="git diff --staged"
 alias gap="git add -p"
 alias gpr="hub pull-request --push -o"
 alias glf="git log -n1"
+
+alias spotimin="wmctrl -r Spotify -b toggle,fullscreen"

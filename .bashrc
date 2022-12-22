@@ -139,18 +139,12 @@ ex ()
 # better yaourt colors
 export YAOURT_COLORS="nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1;41;5:votes=1;44:dsc=0:other=1;35"
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/pib/projects/google-cloud-sdk/path.bash.inc' ]; then . '/home/pib/projects/google-cloud-sdk/path.bash.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/pib/projects/google-cloud-sdk/completion.bash.inc' ]; then . '/home/pib/projects/google-cloud-sdk/completion.bash.inc'; fi
-
 [[ -f ~/git-completion.bash ]] && . ~/git-completion.bash
 
 [[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
 [[ -f ~/.bash_functions ]] && . ~/.bash_functions
 [[ -f ~/.bash_prompt ]] && . ~/.bash_prompt
 
-[[ $TERM != "screen" ]] && exec tmux -2
-
-source /home/pib/.config/broot/launcher/bash/br
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+    tmux attach -t default || tmux new -s default
+fi

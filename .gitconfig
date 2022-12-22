@@ -7,7 +7,7 @@
         cia = commit --amend
         st = status
         pufl = push --force-with-lease
-        lg = "log --color --pretty=format:'* %C(red)%h%Creset %<(100)%s %C(blue)%<(20)%an%Creset %C(green)%<(18)%ad %C(bold yellow)%d%Creset' -n 30 --date=format:'%d/%m/%Y %H:%M:%S'"
+        lg = "log --color --pretty=format:'%C(bold yellow)%D%Creset%n* %C(red)%h%Creset %<(100)%s%n%C(blue)%<(20)%an%Creset %C(green)%<(18)%ad' -n 30 --date=format:'%d/%m/%Y %H:%M:%S'"
 [credential]
         helper = store
 [core]
