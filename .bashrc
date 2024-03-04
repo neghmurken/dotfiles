@@ -92,8 +92,6 @@ alias free='free -m'                      # show sizes in MB
 alias np='nano -w PKGBUILD'
 alias more=less
 
-alias unmute_spotify='for i in $(LC_ALL=C pactl list | grep -E "(^Sink Input)|(media.name = \"Spotify\"$)" | cut -d \# -f2 | grep -v Spotify); do pactl set-sink-input-mute "$i" no; done'
-
 xhost +local:root > /dev/null 2>&1
 
 complete -cf sudo
@@ -144,6 +142,8 @@ export YAOURT_COLORS="nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1
 [[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
 [[ -f ~/.bash_functions ]] && . ~/.bash_functions
 [[ -f ~/.bash_prompt ]] && . ~/.bash_prompt
+
+xmousepasteblock &
 
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
     tmux attach -t default || tmux new -s default

@@ -41,6 +41,7 @@ install jq
 install xclip
 install noto-fonts-emoji
 install inotify-tools
+install xmousepasteblock
 
 install php
 install nodejs

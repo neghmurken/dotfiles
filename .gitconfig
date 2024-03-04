@@ -12,5 +12,6 @@
         helper = store
 [core]
         excludesfile = /home/pib/.gitignore
+	editor = nano
 [pull]
         rebase = false
