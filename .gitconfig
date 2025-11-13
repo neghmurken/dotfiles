@@ -3,7 +3,7 @@
         name = Neghmurken
 [alias]
         co = checkout
-        ci = commit
+        ci = commit -m
         cia = commit --amend
         st = status
         pufl = push --force-with-lease

@@ -10,6 +10,8 @@ alias dce="docker-compose exec"
 
 alias ds="docker service"
 
+alias k="kubectl"
+
 alias up="dc up -dV --remove-orphans"
 alias down="dc down --remove-orphans"
 

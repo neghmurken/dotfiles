@@ -143,7 +143,7 @@ export YAOURT_COLORS="nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1
 [[ -f ~/.bash_functions ]] && . ~/.bash_functions
 [[ -f ~/.bash_prompt ]] && . ~/.bash_prompt
 
-xmousepasteblock &
+xmousepasteblock & >/dev/null 2>&1
 
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
     tmux attach -t default || tmux new -s default
