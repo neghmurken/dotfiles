@@ -11,3 +11,8 @@ test.php
 
 # General
 .aliases
+.prompts/
+git-completion.bash*
+git-prompt.sh*
+
+**/.claude/settings.local.json

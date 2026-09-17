@@ -11,6 +11,7 @@ link_file () {
       echo "$HOME/$1 already exists. Will back-up"
     fi
 
+    mkdir -p `dirname $HOME/$1`
     ln -s -f $DFDIR/$1 $HOME/$1
   else
     echo "$DFDIR/$1 does not exist"
@@ -18,12 +19,13 @@ link_file () {
 }
 
 install () {
-  sudo pacman --noconfirm --needed -S $1
-
-  ec=$?
-  if [ $ec != 0 ]; then
-    yay --noconfirm --norebuild --noredownload -S $1
-  fi
+#  sudo pacman --noconfirm --needed -S $1
+#
+#  ec=$?
+#  if [ $ec != 0 ]; then
+#    yay --noconfirm --norebuild --noredownload -S $1
+#  fi
+   sudo apt-get install $1
 }
 
 # ---- Install dependencies
@@ -75,6 +77,8 @@ link_file .bash_aliases
 link_file .bash_functions
 link_file .gitconfig
 link_file .gitignore
+
+source $DFDIR/.claude/install
 
 # ---- Set up Term preferences
 

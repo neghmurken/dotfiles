@@ -1,0 +1,7 @@
+#!/bin/bash
+
+link_file .claude/CLAUDE.md
+link_file .claude/settings.json
+link_file .claude/skills/brainstorm/SKILL.md
+link_file .claude/skills/changelog/SKILL.md
+link_file .claude/agents/Explore.md

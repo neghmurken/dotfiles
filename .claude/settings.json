@@ -1,0 +1,98 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(code-review)",
+      "Skill(grilling)",
+      "Bash(rtk grep *)",
+      "Bash(grep -E *)",
+      "Bash(rtk find *)",
+      "Bash(/usr/bin/find *)",
+      "Bash(rtk ls *)",
+      "Bash(rtk read *)",
+      "Bash(rtk wc *)",
+      "Bash(xargs cat *)",
+      "Bash(xargs ls -la)",
+      "Bash(xargs -I{} echo {})",
+      "Bash(rtk git log *)",
+      "Bash(rtk git status *)",
+      "Bash(rtk docker ps *)",
+      "Bash(php -r \"echo PHP_VERSION;\")",
+      "mcp__phpstorm__search_in_files_by_text",
+      "mcp__phpstorm__search_in_files_by_regex",
+      "mcp__phpstorm__search_symbol",
+      "mcp__phpstorm__search_text",
+      "mcp__phpstorm__get_file_text_by_path",
+      "mcp__phpstorm__get_project_modules",
+      "mcp__phpstorm__get_all_open_file_paths",
+      "mcp__phpstorm__find_files_by_glob",
+      "mcp__phpstorm__read_file",
+      "Bash(rtk git diff *)",
+      "Bash(rtk proxy find)",
+      "Bash(git ls-tree *)",
+      "Bash(grep -iE \"\\\\.ts$\")",
+      "Bash(rtk git show *)",
+      "Bash(git grep *)"
+    ],
+    "defaultMode": "default"
+  },
+  "model": "Sonnet",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "rtk hook claude"
+          }
+        ]
+      }
+    ]
+  },
+  "worktree": {
+    "baseRef": "head"
+  },
+  "enableArtifact": false,
+  "enableWorkflows": false,
+  "workflowKeywordTriggerEnabled": false,
+  "statusLine": {
+    "type": "command",
+    "command": "bash \"/home/pib/.claude/statusline-command.sh\""
+  },
+  "enabledPlugins": {
+    "caveman@caveman": true,
+    "phpstorm-plugin@phpstorm-marketplace": true,
+    "safety-net@cc-marketplace": true
+  },
+  "extraKnownMarketplaces": {
+    "caveman": {
+      "source": {
+        "source": "github",
+        "repo": "JuliusBrussee/caveman"
+      }
+    },
+    "phpstorm-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "jetbrains/phpstorm-claude-marketplace"
+      }
+    },
+    "cc-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "kenryu42/cc-marketplace"
+      }
+    }
+  },
+  "effortLevel": "xhigh",
+  "promptSuggestionEnabled": false,
+  "awaySummaryEnabled": false,
+  "autoUpdatesChannel": "stable",
+  "minimumVersion": "2.1.197",
+  "skipWorkflowUsageWarning": true,
+  "theme": "auto",
+  "editorMode": "normal",
+  "autoCompactEnabled": true,
+  "remoteControlAtStartup": false,
+  "useAutoModeDuringPlan": false
+}

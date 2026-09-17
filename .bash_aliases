@@ -1,12 +1,13 @@
 #!/bin/bash
 
+alias bat=batcat
 alias less=bat
 alias ll="ls -hail --color"
 alias bye="shutdown now"
 
-alias dc="docker-compose"
-alias dcr="docker-compose run"
-alias dce="docker-compose exec"
+alias dc="docker compose"
+alias dcr="docker compose run"
+alias dce="docker compose exec"
 
 alias ds="docker service"
 
