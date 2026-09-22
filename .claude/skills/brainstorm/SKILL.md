@@ -23,14 +23,18 @@ Once every branch has a first answer, go back over the whole plan a second time 
 
 Stop once the decision tree is fully resolved and the stress-test pass turns up nothing new — or the user says to stop.
 
+## Recap before writing
+
+Before writing anything, show a recap to the user and wait for this explicit approval. Address any review feedback.
+
 ## Writing the handoff document
 
 Once shared understanding is reached, write `./handoff/{slug}.md` at the repo root (create the `handoff/` directory if it doesn't exist yet), so it gets versioned alongside the project. `{slug}` is a short kebab-case name for the decision, e.g. `handoff/streaming-response-cache.md`.
 
 The document must equip a fresh agent with zero prior context to implement the decision without re-deriving anything — but it is read by a human first, before any agent touches it. Write it for that human: short, light sentences, no padding. Include:
 
-- **Context** — what problem or feature this addresses, and why it matters now
-- **Decisions** — each resolved question, the chosen answer, and a one-line rationale (skip trivial ones that need no rationale)
+- **Context** — what problem or feature this addresses, and why it matters now. If the user mentioned from an external source (Jira issue for example), mention it here (link, issue number, platform, etc.)
+- **Decisions** — each resolved question, the chosen answer, and a one-line rationale (skip trivial ones that need no rationale). Do not include all round-robin passes, just the leaves of the decision tree
 - **Implementation details** — the concrete plan: files/modules touched, sequencing, edge cases surfaced during the interview
 - **Open questions** — anything the user explicitly chose to leave open (should be rare, since the stress-test pass is meant to close these)
 

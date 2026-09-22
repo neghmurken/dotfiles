@@ -62,7 +62,8 @@
   "enabledPlugins": {
     "caveman@caveman": true,
     "phpstorm-plugin@phpstorm-marketplace": true,
-    "safety-net@cc-marketplace": true
+    "safety-net@cc-marketplace": true,
+    "atlassian@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "caveman": {
@@ -84,15 +85,19 @@
       }
     }
   },
+  "feedbackDrafts": "off",
   "effortLevel": "xhigh",
   "promptSuggestionEnabled": false,
   "awaySummaryEnabled": false,
   "autoUpdatesChannel": "stable",
-  "minimumVersion": "2.1.197",
+  "minimumVersion": "2.1.267",
+  "timeFormat": "24-hour",
   "skipWorkflowUsageWarning": true,
   "theme": "auto",
   "editorMode": "normal",
+  "preferredNotifChannel": "notifications_disabled",
   "autoCompactEnabled": true,
+  "autoContinueAtUsageLimit": false,
   "remoteControlAtStartup": false,
   "useAutoModeDuringPlan": false
 }
