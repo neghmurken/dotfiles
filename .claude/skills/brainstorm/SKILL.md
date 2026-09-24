@@ -9,7 +9,7 @@ description: Interview the user one question at a time to stress-test an archite
 
 Interview the user relentlessly about the architecture or implementation decision at hand until the plan is watertight. Walk down each branch of the decision tree, resolving dependencies between decisions one-by-one. For each question, provide your recommended answer. No open question should be left unresolved unless the user explicitly decides to leave it open.
 
-Ask the questions one at a time, waiting for feedback on each question before continuing. Asking multiple questions at once is bewildering.
+Ask the questions one at a time, waiting for feedback on each question before continuing. Asking multiple questions at once is bewildering. Prefer using AskUserQuestion tool for this.
 
 If a *fact* can be found by exploring the environment (filesystem, tools, etc.), look it up rather than asking. The *decisions*, though, are the user's — put each one to them and wait for their answer.
 
@@ -17,7 +17,20 @@ Do not implement anything during or after the interview. This skill produces a h
 
 ## Final stress-test pass
 
-Once every branch has a first answer, go back over the whole plan a second time before ending. Challenge every decision against: feasibility, testability, performance, and readability. Look specifically for gaps between decisions, contradictions, and edges nothing yet covers. Raise anything that doesn't hold up as a new question, and resolve it the same way as during the interview.
+Once every branch has a first answer, go back over the whole plan a second time before ending. Challenge every decision against the criteria below. Look specifically for gaps between decisions, contradictions, and edges nothing yet covers. Raise anything that doesn't hold up as a new question, and resolve it the same way as during the interview. It should cover:
+
+ - Feasibility, cost, risk vs. reward
+ - Side effects, impact on other systems (dependent apps, underlying infra, external services, etc.)
+ - Backward compatibility
+ - Performance (latency, throughput, resource usage)
+ - Robustness — error handling, edge cases, and how well the design absorbs future change
+ - Testability: is the solution fully covered by tests (unit, integration, acceptance)?
+ - Code readability, simplicity
+ - Migrations, data recovery / rollback plan
+ - Consistency with existing patterns/conventions
+ - Security — new attack surface, auth/authorization changes, data exposure
+ - Observability — logging, metrics, alerting: can we tell if it works or breaks in production?
+ - Rollout & rollback — deployment strategy, feature flags, safe revert path
 
 ## Ending the interview
 
@@ -25,7 +38,7 @@ Stop once the decision tree is fully resolved and the stress-test pass turns up 
 
 ## Recap before writing
 
-Before writing anything, show a recap to the user and wait for this explicit approval. Address any review feedback.
+Before writing anything, show a recap to the user and wait for their explicit approval. Address any review feedback.
 
 ## Writing the handoff document
 
@@ -33,7 +46,7 @@ Once shared understanding is reached, write `./handoff/{slug}.md` at the repo ro
 
 The document must equip a fresh agent with zero prior context to implement the decision without re-deriving anything — but it is read by a human first, before any agent touches it. Write it for that human: short, light sentences, no padding. Include:
 
-- **Context** — what problem or feature this addresses, and why it matters now. If the user mentioned from an external source (Jira issue for example), mention it here (link, issue number, platform, etc.)
+- **Context** — what problem or feature this addresses, and why it matters now. If the user referenced an external source (e.g. a Jira issue), mention it here (link, issue number, platform, etc.)
 - **Decisions** — each resolved question, the chosen answer, and a one-line rationale (skip trivial ones that need no rationale). Do not include all round-robin passes, just the leaves of the decision tree
 - **Implementation details** — the concrete plan: files/modules touched, sequencing, edge cases surfaced during the interview
 - **Open questions** — anything the user explicitly chose to leave open (should be rare, since the stress-test pass is meant to close these)
